@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de senhas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <h1>Gerador de senha</h1>
+  <div id="campo-senha">
+    <input type="text" value="Lv9*)gi1y5" id="senha" readonly>
+    <button onclick="copiar()">
+      <img src="./img/copiar.svg" alt="Imagem simbolizando copiar">
+    </button>
+  </div>
+
+  <div id="parametros">
+    <div>
+      <label for="quantidade">Quantidade de carácter</label>
+      <p id="valorCaracter">10</p>
+    </div>
+    <input type="range" name="quantidade" id="quantidade" min="0" max="20" oninput="quantidadeCaracter(this.value); gerar()">
+
+    <div class="parametro">
+      <input type="checkbox" name="letrasMaiusculas" id="letrasMaiusculas" oninput="gerar()" checked>
+      <label for="letrasMaiusculas">Incluir letras maiúsculas</label>
+    </div>
+
+    <div class="parametro">
+      <input type="checkbox" name="letrasMinusculas" id="letrasMinusculas" oninput="gerar()" checked>
+      <label for="letrasMinusculas">Incluir letras minúsculas</label>
+    </div>
+
+    <div class="parametro">
+      <input type="checkbox" name="numeros" id="numeros" oninput="gerar()" checked>
+      <label for="numeros">Incluir números</label>
+    </div>
+
+    <div class="parametro">
+      <input type="checkbox" name="simbolos" id="simbolos" oninput="gerar()" checked>
+      <label for="simbolos">Incluir símbolos</label>
+    </div>
+
+    <div id="força">
+      <p>Força</p>
+
+      <div>
+        <span id="fraco"></span>
+        <span id="medio"></span>
+        <span id="boa"></span>
+        <span id="forte"></span>
+      </div>
+    </div>
+
+    <button onclick="gerar()" id="gerar">Gerar <img src="./img/seta.svg"></button>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
