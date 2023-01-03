@@ -12,8 +12,6 @@ function quantidadeCaracter(value) {
   valorCaracter.innerHTML = value
 }
 
-/*======================================================================================================*/
-
 const tamanhoSenha = document.getElementById("quantidade");
 const letrasMaiusculasCaixa = document.getElementById("letrasMaiusculas");
 const letrasMinusculasCaixa = document.getElementById("letrasMinusculas");
@@ -92,23 +90,23 @@ function generatePassword() {
     fraco.classList.add('ativo')
   }
 
-  if (tamanho == 0) {
+  if (tamanho == 0 || marcado == 0) {
     fraco.classList.remove('ativo')
   }
 
-  if (tamanho > 6) {
+  if (tamanho > 6 && marcado > 2 || tamanho > 7 && marcado > 1 || tamanho > 8 && marcado > 0) {
     medio.classList.add('ativo')
   } else {
     medio.classList.remove('ativo')
   }
 
-  if (tamanho > 8) {
+  if (tamanho > 7 && marcado > 2 || tamanho > 8 && marcado > 1 || tamanho > 9 && marcado > 0) {
     boa.classList.add('ativo')
   } else {
     boa.classList.remove('ativo')
   }
 
-  if (tamanho > 10) {
+  if (tamanho > 9 && marcado>3 || tamanho>10 && marcado> 1 || tamanho >12 && marcado>0) {
     forte.classList.add('ativo')
   } else {
     forte.classList.remove('ativo')
